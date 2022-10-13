@@ -8,7 +8,7 @@ const securityReducer = (state = initialState, action) => {
     switch(action.type){
         case constants.SIGN_IN: return {...state};
         case constants.SIGN_OUT: return {...state};
-        case constants.SET_TOKEN: return {...state, token: action.payload};
+        case constants.SIGN_UP: return {...state};
         default: return state;
     }
 }

@@ -41,7 +41,9 @@ const RecentSeals = () => {
     ]);
 
     return (
-        <Table data={data}/>
+        <div className="pt-4">
+            <Table data={data}/>
+        </div>
     )
 }
 

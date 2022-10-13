@@ -1,17 +1,18 @@
-import {ENABLE_LOADING, DISABLE_LOADING} from "../constants/ui";
+import * as constants from "../constants/ui";
 
 const initialState = {
-    loading: false
+    loading: false,
+    activeMenu: 'dashboard',
 };
 
 const uiReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ENABLE_LOADING:
+        case constants.ENABLE_LOADING:
             return {
                 ...state,
                 loading: true
             };
-        case DISABLE_LOADING:
+        case constants.DISABLE_LOADING:
             return {
                 ...state,
                 loading: false

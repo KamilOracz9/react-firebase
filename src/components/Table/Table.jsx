@@ -19,7 +19,7 @@ const Table = ({data}) => {
             ))}
         </tr>
     ), [data]);
-
+    
     return (
         <div className="container-fluid pt-4 px-0">
                     <div className="bg-secondary text-center rounded p-4">

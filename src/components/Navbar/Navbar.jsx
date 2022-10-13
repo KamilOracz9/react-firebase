@@ -1,8 +1,14 @@
 import React from 'react'
-
+import { useDispatch } from 'react-redux';
+import {SIGN_OUT} from '../../store/constants/security';
 import userImg from '../../assets/img/user.jpg';
 
 const Navbar = () => {
+    const dispatch = useDispatch();
+
+    const signOut = () => {
+        dispatch({type: SIGN_OUT});
+    }
 
     const toggleMenu = () => {
         const sidebar = document.getElementsByClassName('sidebar')[0];
@@ -95,7 +101,7 @@ const Navbar = () => {
                     <div className="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" className="dropdown-item">My Profile</a>
                         <a href="#" className="dropdown-item">Settings</a>
-                        <a href="#" className="dropdown-item">Log Out</a>
+                        <a href="#" className="dropdown-item" onClick={signOut}>Log Out</a>
                     </div>
                 </div>
             </div>

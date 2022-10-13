@@ -61,7 +61,7 @@ const Dashboard = () => {
     ), []);
 
     return (
-        <div className="container-fluid pt-4 px-4">
+        <div className="container-fluid p-0">
             {renderSimpleTiles}
             {renderCharts}
             {renderRecentSeals}

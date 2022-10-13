@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react'
 import {Navbar, Sidebar, Footer} from '../../components';
-import Dashboard from '../../pages/Dashboard/Dashboard';
+import { BrowserRouter } from 'react-router-dom';
+import { AdminNavigation } from '../../navigations';
+
 
 const Admin = () => {
   const renderSidebar = useMemo(() => {
@@ -13,12 +15,16 @@ const Admin = () => {
 
   return (
     <div className="container-fluid position-relative d-flex p-0">
+        <BrowserRouter>
         {renderSidebar}
-        <div className='content'>
-          {renderNavbar}
-          <Dashboard />
-          <Footer />
-        </div>
+          <div className='content' style={{ display:'flex', flexDirection: 'column' }}>
+            {renderNavbar}
+            <div class="container-fluid position-relative d-flex p-4" style={{ flex: 1 }}>
+              <AdminNavigation />
+            </div>
+            <Footer />
+          </div>
+        </BrowserRouter>
     </div>
   )
 }
